@@ -7,7 +7,7 @@ available files
 
 ## Prepare list of available data sets
 
-DIRAC command
+uses DIRAC command
 
 e.g.
 
@@ -60,5 +60,13 @@ Prod5_LaPalma_AdvancedBaseline_NSB1x_electron_North_20deg_DL0.list
 Prod5_LaPalma_AdvancedBaseline_NSB1x_electron_North_20deg_DL0.local.list
 ```
 
+## Downloading files
 
+uses DIRAC command
+
+```
+./getRawFilesFromGRID-DIRAC.sh Prod5_LaPalma_AdvancedBaseline_NSB1x/Prod5_LaPalma_AdvancedBaseline_NSB1x_gamma-diffuse_North_20deg_DL0.GRID.list Prod5_LaPalma_AdvancedBaseline_NSB1x/gamma_cone 100
+```
+
+(this obviously takes quite a while)
 
