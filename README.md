@@ -1,4 +1,9 @@
+# Introduction
 
+Some simple script to prepare and steer file lists from CTA prod5 production and compare it with locally (DESY)
+available files
+
+# Usage
 
 ## Prepare list of available data sets
 
@@ -40,11 +45,20 @@ This queries the CTA production DB and puts file lists into Prod5_LaPalma_Advanc
 ## Check which files are on DESY dCache, lustre, GRID
 
 The following commands queries both dCache and lustre for files.
-This command takes usually a long time as it has to query thousands of files
-
+This command takes usually a long time as it has to query thousands of files.
 
 ```
 ./getFiles_and_checkifLocal.sh check Prod5_LaPalma_AdvancedBaseline_NSB1x
 ```
+
+This will prepare the following files for each particle type, and azimuth direction:
+
+```
+Prod5_LaPalma_AdvancedBaseline_NSB1x_electron_North_20deg_DL0.dCache.list
+Prod5_LaPalma_AdvancedBaseline_NSB1x_electron_North_20deg_DL0.GRID.list
+Prod5_LaPalma_AdvancedBaseline_NSB1x_electron_North_20deg_DL0.list
+Prod5_LaPalma_AdvancedBaseline_NSB1x_electron_North_20deg_DL0.local.list
+```
+
 
 
