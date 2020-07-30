@@ -24,6 +24,11 @@ then
    mkdir -p ${2}
 fi
 
+if [ ! -e ${1} ]; then
+  echo "error: file list not found: ${1}"
+  exit
+fi
+
 # temporary directory for file lists
 FFN=`basename $1`
 mkdir -p ${2}/tmplists
