@@ -55,7 +55,9 @@ do
     if [ -e $DDIR/$OFIL ] && [ -s $DDIR/$OFIL ]
     then
        echo "FILE EXISTS: $DDIR/$OFIL"
-       echo $DDIR/$OFIL >> $FGA
+       # full path
+       FFGA=$(readlink -f $DDIR/$OFIL)
+       echo ${FFGA} >> $FGA
     else
        # check if it is stored locally on the dcache
        DC="/acs/grid/cta/$i"
