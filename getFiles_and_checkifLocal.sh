@@ -27,7 +27,7 @@ do
     if [[ ${F} == *"gamma-diffuse"* ]]; then
         P="gamma_cone"
     elif [[ ${F} == *"gamma"* ]]; then
-        P="gamma"
+        P="gamma_onSource"
     elif [[ ${F} == *"proton"* ]]; then
         P="proton"
     elif [[ ${F} == *"electron"* ]]; then
