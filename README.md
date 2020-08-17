@@ -70,3 +70,26 @@ uses DIRAC command
 
 (this obviously takes quite a while)
 
+
+## Copy file lists into productions directories
+
+Rename list to be readable by Eventdisplay scripts
+
+e.g.,
+```
+./copy_file_lists.sh Prod5_LaPalma_AdvancedBaseline_NSB1x $CTA_USER_DATA_DIR/analysis/AnalysisData/FileList_prod5/prod5-LaPalma-20deg/
+```
+Should copy all *local* lists from ./Prod5_LaPalma_AdvancedBaseline_NSB1x/ and rename them to:
+```
+electron_180deg.list
+electron.list
+gamma_cone_0deg.list
+gamma_cone_180deg.list
+gamma_cone.list
+gamma_onSource_0deg.list
+gamma_onSource_180deg.list
+gamma_onSource.list
+proton_0deg.list
+proton_180deg.list
+proton.list
+```
