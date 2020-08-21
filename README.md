@@ -68,6 +68,12 @@ uses DIRAC command
 ./getRawFilesFromGRID-DIRAC.sh Prod5_LaPalma_AdvancedBaseline_NSB1x/Prod5_LaPalma_AdvancedBaseline_NSB1x_gamma-diffuse_North_20deg_DL0.GRID.list Prod5_LaPalma_AdvancedBaseline_NSB1x/gamma_cone 100
 ```
 
+Start downloading in parallel for all particle types (needs adjustment for data set and data level):
+
+```
+./download_paranal.sh
+```
+
 (this obviously takes quite a while)
 
 
