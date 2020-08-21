@@ -99,3 +99,25 @@ proton_0deg.list
 proton_180deg.list
 proton.list
 ```
+
+# DL1 files 
+
+## Download DL1 tar packages from GRID
+
+- file lists must be prepared for data sets for DL1 (e.g., Prod5_LaPalma_AdvancedBaseline_NSB1x_DL1)
+- download_parallel.sh must be modified to DL1
+
+## Copy DL1 root files to analysis directory
+
+Use script *copy_file_lists.sh*, which requires adjustments at the top:
+
+- target directory for analysis
+- list of array types
+- local DL1 data directory
+
+```
+./copy_DL1files.sh copy
+```
+
+Note: will take a while (many files)
+

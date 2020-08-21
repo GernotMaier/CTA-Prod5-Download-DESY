@@ -1,6 +1,8 @@
 #!/bin/bash
 #
 # copy file list into the analysis directories
+# (lists required for the analysis with Evndisp)
+# 
 
 if [ $# -lt 2 ]; then
 echo "
