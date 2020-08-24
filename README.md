@@ -109,6 +109,8 @@ proton.list
 
 ## Copy DL1 root files to analysis directory
 
+### Downloaded tar files
+
 Use script *copy_file_lists.sh*, which requires adjustments at the top:
 
 - target directory for analysis
@@ -120,4 +122,13 @@ Use script *copy_file_lists.sh*, which requires adjustments at the top:
 ```
 
 Note: will take a while (many files)
+
+### Files from dCache
+
+Use script *copy_DL1files_from_dCache.sh*, which requires adjustments at the top (see previous entry for *copy_file_lists.sh*).
+
+```
+./copy_DL1files_from_dCache.sh
+```
+
 
