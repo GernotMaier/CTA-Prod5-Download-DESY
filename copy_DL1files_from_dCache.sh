@@ -16,7 +16,7 @@ DSET="Prod5_LaPalma_AdvancedBaseline_NSB1x"
 PLIST="gamma_onSource gamma_cone proton"
 PLIST="gamma_onSource gamma_cone proton electron"
 # targetdir
-OSET="prod5-LaPalma-20deg-v02-LL"
+OSET="prod5-LaPalma-20deg-EVNDISP"
 ########################
 # list of arrays
 # South
@@ -41,7 +41,7 @@ do
    for A in "${ARRAY[@]}"
    do
       # files are copied here
-      ODIR=${CTA_USER_DATA_DIR}/analysis/AnalysisData/${OSET}/N.${A}/$P
+      ODIR=${CTA_USER_DATA_DIR}/analysis/AnalysisData/${OSET}/N.${A}/EVNDISP/$P
       echo $ODIR
       mkdir -p ${ODIR}
       for D in North South
