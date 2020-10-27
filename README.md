@@ -1,6 +1,6 @@
 # Introduction
 
-Some simple script to prepare and steer file lists from CTA prod5 production and compare it with locally (DESY)
+Some simple script to prepare and steer file lists from CTA prodx production and compare it with locally (DESY)
 available files
 
 # Usage
