@@ -8,9 +8,16 @@
 DD="Prod5_Paranal_AdvancedBaseline_NSB1x"
 # Prod4b SST production
 DD="Prod4b_Paranal"
+# Prod4b SST production
+DD="Prod3b_Paranal"
 
 ZE="20deg"
 DL="DL0"
+SCT="FALSE"
+if [[ $DD == "Prod3b_Paranal" ]]; then
+  DL="HB9"
+  SCT="TRUE"
+fi
 
 mkdir -p tmp_log
 
@@ -37,8 +44,21 @@ do
                 FFLIST="${DD}_${ZE}/${DD}_${PP}_${A}_${ZE}_SSTOnly_${S}_${DL}.GRID.list"
                 ./getRawFilesFromGRID-DIRAC.sh ${FFLIST} ${DD}/${P}/ 100 &> tmp_log/${P}_${A}_${S}.log &
             done
+         # all other productions
          else
-            ./getRawFilesFromGRID-DIRAC.sh ${DD}/${DD}_${PP}_${A}_${ZE}_${DL}.GRID.list ${DD}/${P}/ 100 &> tmp_log/${P}_${A}.log &
+            FLIST="${DD}/${DD}_${PP}_${A}_${ZE}_${DL}.GRID.list"
+            # prod3b needs some special treatment
+            if [[ ! -e ${FLIST} ]]; then
+                echo "File list not found; trying prod3b naming ($FLIST); trying prod3b lists:"
+                FLIST="${DD}_${ZE}_${DL}/Paranal_${PP}_${A}_${ZE}_${DL}.GRID.list"
+                if [[ ! -e ${FLIST} ]]; then
+                   echo "$FLIST not found"
+                   exit
+                fi
+                echo "...found ${FLIST}"
+            fi
+            echo "Reading file list $FLIST"
+            ./getRawFilesFromGRID-DIRAC.sh $FLIST ${DD}/${P}/ 100 ${SCT} &> tmp_log/${P}_${A}.log &
          fi
          sleep 10
      done

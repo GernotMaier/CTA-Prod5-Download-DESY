@@ -9,7 +9,7 @@
 if [ $# -lt 3 ]; then
 echo "
 
-./getRawFilesFromGRID-DIRAC.sh <run list> <target directory> <max files (100)>
+./getRawFilesFromGRID-DIRAC.sh <run list> <target directory> <max files (100)> [SCT cut=TRUE]
 
 download using DIRAC tools
 (adjusted to DESY environment)
@@ -17,13 +17,17 @@ download using DIRAC tools
 exit
 fi
 
+echo "RUNLSIT ${1}"
+echo "Target directory: ${2}"
+echo "Max file: ${3}"
+[[ "$4" ]] && SCT=$4 || SCT="FALSE"
+
 PDIR=`pwd`
 
 if [ -e ${2} ]
 then
    mkdir -p ${2}
 fi
-
 if [ ! -e ${1} ]; then
   echo "error: file list not found: ${1}"
   exit
@@ -43,7 +47,12 @@ do
    let "z = $z + 1"
    LLIST=$2/tmplists/$FFN.tmplist.d.$z.list
    echo $LLIST
-   sed -n "$l,$k p" $1 > $LLIST
+   # optionally download only SCT files
+   if [[ $SCT = "TRUE" ]]; then
+       sed -n "$l,$k p" $1 | grep SCT > $LLIST
+   else
+       sed -n "$l,$k p" $1 > $LLIST
+   fi
 
    # check if files are on disk
    FF=`cat $LLIST`
