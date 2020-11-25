@@ -17,7 +17,7 @@ download using DIRAC tools
 exit
 fi
 
-echo "RUNLSIT ${1}"
+echo "RUNLIST ${1}"
 echo "Target directory: ${2}"
 echo "Max file: ${3}"
 [[ "$4" ]] && SCT=$4 || SCT="FALSE"
