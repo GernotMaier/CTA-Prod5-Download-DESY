@@ -1,12 +1,11 @@
 #!/bin/bash
 #
-# copy DL1 files from tar in dCache (!!) files to target directory
+# copy DLX files from dCache (!!) files to target directory
 # 
-# ./copy_DL1files.sh
 #
 
 if [ $# -eq 0 ]; then
-   echo "./copy_DL1files.sh <production>"
+   echo "./copy_DLXfiles_from_dCache.sh <production>"
 fi
 
 FLIST=$(cat ${1}.list)
