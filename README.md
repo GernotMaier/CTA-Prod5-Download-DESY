@@ -131,4 +131,6 @@ Use script *copy_DL1files_from_dCache.sh*, which requires adjustments at the top
 ./copy_DL1files_from_dCache.sh
 ```
 
+# Licence
 
+License: BSD-3 (see LICENCE file)
